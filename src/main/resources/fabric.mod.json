@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "more_crustacean",
+	"version": "${version}",
+	"name": "More Crustacean",
+	"description": "Add some crustaceans and some little water animal to Minecraft.",
+	"authors": [
+		"White_Heket"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC BY-NC-SA 4.0",
+	"icon": "assets/more_crustacean_whiteheket/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"white_heket.more_crustacean.MoreCrustacean"
+		],
+		"client": [
+			"white_heket.more_crustacean.MoreCrustaceanClient"
+		]
+	},
+	"mixins": [
+		"more-crustacean.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

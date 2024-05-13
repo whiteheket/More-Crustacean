@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "more_crustacean_whiteheket:hairy_crab"
+  },
+  "result": "more_crustacean_whiteheket:cooked_hairy_crab"
+}

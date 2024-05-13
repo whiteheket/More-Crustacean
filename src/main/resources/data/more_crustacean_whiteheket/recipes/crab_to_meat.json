@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "cook",
+  "ingredients": [
+    {
+      "tag": "more_crustacean_whiteheket:crabs"
+    }
+  ],
+  "result": {
+    "item": "more_crustacean_whiteheket:crab_meat",
+    "count": 3
+  }
+}
