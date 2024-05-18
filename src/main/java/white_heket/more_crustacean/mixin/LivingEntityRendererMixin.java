@@ -1,6 +1,6 @@
 package white_heket.more_crustacean.mixin;
 
-import effect.ModEffects;
+import white_heket.more_crustacean.effect.ModEffects;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.LivingEntityRenderer;

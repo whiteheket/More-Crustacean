@@ -1,11 +1,12 @@
 package white_heket.more_crustacean;
 
-import effect.ModEffects;
-import effect.ModPotion;
-import entity.ModEntities;
-import entity.ModEntitySpawn;
-import event.VillagerTrade;
-import item.ModItems;
+import white_heket.more_crustacean.effect.ModEffects;
+import white_heket.more_crustacean.effect.ModPotion;
+import white_heket.more_crustacean.entity.ModEntities;
+import white_heket.more_crustacean.entity.ModEntitySpawn;
+import white_heket.more_crustacean.event.VillagerTrade;
+import white_heket.more_crustacean.item.ComposterItems;
+import white_heket.more_crustacean.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -15,10 +16,9 @@ import software.bernie.geckolib.GeckoLib;
 public class MoreCrustacean implements ModInitializer {
 	public static final String MOD_ID = "more_crustacean_whiteheket";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("螃蟹螃蟹龙虾龙虾");
 		GeckoLib.initialize();
 		ModEntities.entityAttributes();
 		ModItems.init();
@@ -26,5 +26,6 @@ public class MoreCrustacean implements ModInitializer {
 		ModEffects.init();
 		ModPotion.registerBrewingRecipe();
 		VillagerTrade.init();
+		ComposterItems.registerDefaultCompostableItems();
 	}
 }
