@@ -45,7 +45,7 @@ public class BrownCrabEntity extends AbstractCrabEntity implements Angerable, Ge
     }
     public static DefaultAttributeContainer.Builder setAttributes(){
         return createLivingAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH,15)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH,8)
                 .add(EntityAttributes.GENERIC_ARMOR,4)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,4.0f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED,1.0f)

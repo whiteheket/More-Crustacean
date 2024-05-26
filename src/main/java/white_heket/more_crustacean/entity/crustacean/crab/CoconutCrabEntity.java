@@ -48,7 +48,7 @@ public class CoconutCrabEntity extends AbstractCrabEntity implements Angerable,G
     }
     public static DefaultAttributeContainer.Builder setAttributes(){
         return createLivingAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH,30)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH,15)
                 .add(EntityAttributes.GENERIC_ARMOR,4)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,5.0f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED,0.8f)

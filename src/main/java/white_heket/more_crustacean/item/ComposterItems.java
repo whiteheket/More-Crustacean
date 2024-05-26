@@ -17,12 +17,16 @@ public class ComposterItems {
         registerCompostableItem(0.5F, ModItems.GIANT_MUD_CRAB);
         registerCompostableItem(0.3F, ModItems.HAIRY_CRAB);
         registerCompostableItem(0.5F, ModItems.CLAWSTER);
+        registerCompostableItem(0.4F, ModItems.LOBSTER);
+        registerCompostableItem(0.1F, ModItems.PRAWN);
         registerCompostableItem(0.3F, ModItems.COOKED_BROWN_CRAB);
         registerCompostableItem(0.3F, ModItems.COOKED_SWIMMER_CRAB);
         registerCompostableItem(0.6F, ModItems.COOKED_KING_CRAB);
         registerCompostableItem(0.5F, ModItems.COOKED_GIANT_MUD_CRAB);
         registerCompostableItem(0.3F, ModItems.COOKED_HAIRY_CRAB);
         registerCompostableItem(0.5F, ModItems.COOKED_CLAWSTER);
+        registerCompostableItem(0.4F, ModItems.COOKED_LOBSTER);
+        registerCompostableItem(0.1F, ModItems.COOKED_PRAWN);
         registerCompostableItem(0.1F, ModItems.CRAB_MEAT);
         registerCompostableItem(0.1F, ModItems.COOKED_CRAB_MEAT);
     }

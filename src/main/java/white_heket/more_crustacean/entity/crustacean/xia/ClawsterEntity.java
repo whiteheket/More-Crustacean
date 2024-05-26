@@ -48,7 +48,7 @@ public class ClawsterEntity extends AbstractCrabEntity implements GeoEntity, Ang
     }
     public static DefaultAttributeContainer.Builder setAttributes(){
         return WaterCreatureEntity.createLivingAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH,30)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH,15)
                 .add(EntityAttributes.GENERIC_ARMOR,5)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,6.0f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED,0.5f)
@@ -181,6 +181,7 @@ public class ClawsterEntity extends AbstractCrabEntity implements GeoEntity, Ang
         }
         @Override
         public void tick(){
+            this.clawster.setMovementSpeed((float) (this.clawster.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED)*2.0));
             List<LivingEntity> nearbyEntities = this.clawster.getWorld().getEntitiesByClass(LivingEntity.class, clawster.getBoundingBox().expand(8.0), entity -> true);
             for (LivingEntity entity : nearbyEntities) {
                 if (entity != clawster) {

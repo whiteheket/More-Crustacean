@@ -43,7 +43,7 @@ public class KingCrabEntity extends AbstractCrabEntity implements Angerable, Geo
     }
     public static DefaultAttributeContainer.Builder setAttributes(){
         return createLivingAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH,30)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH,15)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,4.0f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED,1.0f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE,24.0f)

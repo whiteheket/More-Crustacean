@@ -42,7 +42,7 @@ public class HairyCrabEntity extends AbstractCrabEntity implements Angerable, Ge
     }
     public static DefaultAttributeContainer.Builder setAttributes(){
         return createLivingAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH,12)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH,8)
                 .add(EntityAttributes.GENERIC_ARMOR,3)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,3.0f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED,1.2f)

@@ -11,6 +11,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import white_heket.more_crustacean.MoreCrustacean;
 import white_heket.more_crustacean.entity.crustacean.crab.*;
+import white_heket.more_crustacean.entity.crustacean.xia.LobsterEntity;
+import white_heket.more_crustacean.entity.crustacean.xia.PrawnEntity;
 
 public class ModEntities {
     //注册生物类型
@@ -41,6 +43,12 @@ public class ModEntities {
     public static final EntityType<ClawsterEntity> CLAWSTER =Registry.register(Registries.ENTITY_TYPE,
             new Identifier(MoreCrustacean.MOD_ID,"clawster"),
             FabricEntityTypeBuilder.create(SpawnGroup.WATER_CREATURE, ClawsterEntity::new).dimensions(EntityDimensions.fixed(0.8f,0.6f)).build());
+    public static final EntityType<LobsterEntity> LOBSTER =Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MoreCrustacean.MOD_ID,"lobster"),
+            FabricEntityTypeBuilder.create(SpawnGroup.WATER_CREATURE, LobsterEntity::new).dimensions(EntityDimensions.fixed(0.7f,0.6f)).build());
+    public static final EntityType<PrawnEntity> PRAWN =Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MoreCrustacean.MOD_ID,"prawn"),
+            FabricEntityTypeBuilder.create(SpawnGroup.WATER_CREATURE, PrawnEntity::new).dimensions(EntityDimensions.fixed(0.5f,0.3f)).build());
     //注册生物属性
     public static void entityAttributes(){
         FabricDefaultAttributeRegistry.register(ModEntities.BROWN_CRAB, BrownCrabEntity.setAttributes());
@@ -52,5 +60,7 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(ModEntities.SAND_CRAB, SandCrabEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.LAND_CRAB,LandCrabEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.CLAWSTER,ClawsterEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.LOBSTER,LobsterEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.PRAWN,PrawnEntity.setAttributes());
     }
 }

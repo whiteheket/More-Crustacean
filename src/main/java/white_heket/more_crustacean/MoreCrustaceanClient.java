@@ -1,5 +1,8 @@
 package white_heket.more_crustacean;
 
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.client.render.RenderLayer;
+import white_heket.more_crustacean.block.ModBlocks;
 import white_heket.more_crustacean.entity.ModEntities;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -17,5 +20,8 @@ public class MoreCrustaceanClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.SAND_CRAB, SandCrabRenderer::new);
         EntityRendererRegistry.register(ModEntities.LAND_CRAB,LandCrabRenderer::new);
         EntityRendererRegistry.register(ModEntities.CLAWSTER, ClawsterRenderer::new);
+        EntityRendererRegistry.register(ModEntities.LOBSTER,LobsterRenderer::new);
+        EntityRendererRegistry.register(ModEntities.PRAWN,PrawnRenderer::new);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CRAB_POT_BLOCK, RenderLayer.getCutoutMipped());
     }
 }

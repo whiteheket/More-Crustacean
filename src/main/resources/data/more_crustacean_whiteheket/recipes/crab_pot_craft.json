@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:iron_bars"
+    },
+    "#": {
+      "item": "minecraft:string"
+    },
+    "X": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "o": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "pattern": [
+    "#o#",
+    "1X1",
+    "#o#"
+  ],
+  "result": {
+    "item": "more_crustacean_whiteheket:crab_pot"
+  },
+  "show_notification": true
+}

@@ -1,5 +1,7 @@
 package white_heket.more_crustacean;
 
+//import white_heket.more_crustacean.block.ModBlocks;
+import white_heket.more_crustacean.block.ModBlocks;
 import white_heket.more_crustacean.effect.ModEffects;
 import white_heket.more_crustacean.effect.ModPotion;
 import white_heket.more_crustacean.entity.ModEntities;
@@ -26,6 +28,7 @@ public class MoreCrustacean implements ModInitializer {
 		ModEffects.init();
 		ModPotion.registerBrewingRecipe();
 		VillagerTrade.init();
+		ModBlocks.init();
 		ComposterItems.registerDefaultCompostableItems();
 	}
 }

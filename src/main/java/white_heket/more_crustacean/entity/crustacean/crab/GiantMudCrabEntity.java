@@ -50,8 +50,8 @@ public class GiantMudCrabEntity extends AbstractCrabEntity implements Angerable,
     }
     public static DefaultAttributeContainer.Builder setAttributes(){
         return createLivingAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH,24)
-                .add(EntityAttributes.GENERIC_ARMOR,8)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH,20)
+                .add(EntityAttributes.GENERIC_ARMOR,10)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,8.0f)
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED,1.2f)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE,32.0f)

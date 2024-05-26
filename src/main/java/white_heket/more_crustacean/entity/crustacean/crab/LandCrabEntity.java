@@ -54,7 +54,7 @@ public class LandCrabEntity extends AbstractCrabEntity implements Angerable, Geo
     }
     public static DefaultAttributeContainer.Builder setAttributes(){
             return createLivingAttributes()
-                    .add(EntityAttributes.GENERIC_MAX_HEALTH,18)
+                    .add(EntityAttributes.GENERIC_MAX_HEALTH,10)
                     .add(EntityAttributes.GENERIC_ARMOR,5)
                     .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,5.0f)
                     .add(EntityAttributes.GENERIC_ATTACK_SPEED,1.0f)
