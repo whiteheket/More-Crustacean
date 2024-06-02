@@ -69,16 +69,12 @@ public class SwimmerCrabEntity extends AbstractCrabEntity implements Angerable, 
         this.goalSelector.add(3,new LookAtEntityGoal(this, PlayerEntity.class,6.0F));
         this.goalSelector.add(3, new LookAroundGoal(this));
         this.goalSelector.add(5,new SwimAroundGoal(this,1,1));
-        this.targetSelector.add(1,new ActiveTargetGoal<>(this, DrownedEntity.class, true));
-        this.targetSelector.add(2,new RevengeGoal(this, new Class[0]));
+        this.targetSelector.add(2,new ActiveTargetGoal<>(this, DrownedEntity.class, true,(entity) -> entity.isBaby()));
+        this.targetSelector.add(1,new RevengeGoal(this, new Class[0]));
     }
     @Override
     public boolean shouldSwimInFluids(){
-        if(this.isTargetingUnderwater()){
-            return true;
-        }else {
-            return false;
-        }
+        return true;
     }
     @Override
     public ItemStack getBucketItem() {

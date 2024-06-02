@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "name": "more_crustacean_whiteheket:swimmer_crab",
-          "weight": 10
+          "weight": 15
         },
         {
           "type": "minecraft:item",
@@ -16,8 +16,23 @@
         },
         {
           "type": "minecraft:item",
+          "name": "more_crustacean_whiteheket:clam",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "more_crustacean_whiteheket:cockle",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
           "name": "more_crustacean_whiteheket:prawn",
-          "weight": 20
+          "weight": 23
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nautilus_shell",
+          "weight": 1
         }
       ],
       "rolls": 1.0

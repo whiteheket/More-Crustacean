@@ -1,6 +1,5 @@
 package white_heket.more_crustacean;
 
-//import white_heket.more_crustacean.block.ModBlocks;
 import white_heket.more_crustacean.block.ModBlocks;
 import white_heket.more_crustacean.effect.ModEffects;
 import white_heket.more_crustacean.effect.ModPotion;
@@ -14,6 +13,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib.GeckoLib;
+import white_heket.more_crustacean.world.ModFeatures;
 
 public class MoreCrustacean implements ModInitializer {
 	public static final String MOD_ID = "more_crustacean_whiteheket";
@@ -30,5 +30,6 @@ public class MoreCrustacean implements ModInitializer {
 		VillagerTrade.init();
 		ModBlocks.init();
 		ComposterItems.registerDefaultCompostableItems();
+		ModFeatures.init();
 	}
 }

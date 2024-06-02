@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,waterlogged=false": { "model": "more_crustacean_whiteheket:block/oyster_block", "uvlock": false },
+    "facing=east,waterlogged=false":  { "model": "more_crustacean_whiteheket:block/oyster_block", "y":  90, "uvlock": false },
+    "facing=south,waterlogged=false": { "model": "more_crustacean_whiteheket:block/oyster_block", "y": 180, "uvlock": false },
+    "facing=west,waterlogged=false":  { "model": "more_crustacean_whiteheket:block/oyster_block", "y": 270, "uvlock": false },
+    "facing=north,waterlogged=true": { "model": "more_crustacean_whiteheket:block/oyster_block", "uvlock": false },
+    "facing=east,waterlogged=true":  { "model": "more_crustacean_whiteheket:block/oyster_block", "y":  90, "uvlock": false },
+    "facing=south,waterlogged=true": { "model": "more_crustacean_whiteheket:block/oyster_block", "y": 180, "uvlock": false },
+    "facing=west,waterlogged=true":  { "model": "more_crustacean_whiteheket:block/oyster_block", "y": 270, "uvlock": false }
+  }
+}

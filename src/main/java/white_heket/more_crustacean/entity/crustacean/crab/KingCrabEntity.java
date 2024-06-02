@@ -60,7 +60,6 @@ public class KingCrabEntity extends AbstractCrabEntity implements Angerable, Geo
         this.goalSelector.add(3,new LookAtEntityGoal(this, PlayerEntity.class,6.0F));
         this.goalSelector.add(3, new LookAroundGoal(this));
         this.goalSelector.add(2,new CrabDigGoal(this,0.10));
-        //this.targetSelector.add(1,new ActiveTargetGoal<>(this, TurtleEntity.class, false,(entity) -> entity.isBaby()));
         this.targetSelector.add(1,new RevengeGoal(this, new Class[0]));
     }
     public static boolean canSpawn(EntityType<? extends WaterCreatureEntity> entity, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {

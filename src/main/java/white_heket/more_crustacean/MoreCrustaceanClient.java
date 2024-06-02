@@ -22,6 +22,7 @@ public class MoreCrustaceanClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.CLAWSTER, ClawsterRenderer::new);
         EntityRendererRegistry.register(ModEntities.LOBSTER,LobsterRenderer::new);
         EntityRendererRegistry.register(ModEntities.PRAWN,PrawnRenderer::new);
+        EntityRendererRegistry.register(ModEntities.CRAYFISH,CrayfishRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CRAB_POT_BLOCK, RenderLayer.getCutoutMipped());
     }
 }

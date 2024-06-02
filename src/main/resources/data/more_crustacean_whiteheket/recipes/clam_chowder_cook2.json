@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "key": {
+    "1": {
+      "item": "minecraft:bowl"
+    },
+    "#": {
+      "item": "more_crustacean_whiteheket:cockle"
+    },
+    "2": {
+      "item": "minecraft:carrot"
+    },
+    "o": {
+      "item": "minecraft:potato"
+    }
+  },
+  "pattern": [
+    "###",
+    "21o"
+  ],
+  "result": {
+    "item": "more_crustacean_whiteheket:clam_chowder"
+  },
+  "show_notification": true
+}

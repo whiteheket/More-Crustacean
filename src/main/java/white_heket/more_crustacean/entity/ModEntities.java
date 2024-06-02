@@ -11,6 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import white_heket.more_crustacean.MoreCrustacean;
 import white_heket.more_crustacean.entity.crustacean.crab.*;
+import white_heket.more_crustacean.entity.crustacean.xia.CrayfishEntity;
 import white_heket.more_crustacean.entity.crustacean.xia.LobsterEntity;
 import white_heket.more_crustacean.entity.crustacean.xia.PrawnEntity;
 
@@ -49,6 +50,9 @@ public class ModEntities {
     public static final EntityType<PrawnEntity> PRAWN =Registry.register(Registries.ENTITY_TYPE,
             new Identifier(MoreCrustacean.MOD_ID,"prawn"),
             FabricEntityTypeBuilder.create(SpawnGroup.WATER_CREATURE, PrawnEntity::new).dimensions(EntityDimensions.fixed(0.5f,0.3f)).build());
+    public static final EntityType<CrayfishEntity> CRAYFISH =Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MoreCrustacean.MOD_ID,"crayfish"),
+            FabricEntityTypeBuilder.create(SpawnGroup.WATER_CREATURE, CrayfishEntity::new).dimensions(EntityDimensions.fixed(0.6f,0.4f)).build());
     //注册生物属性
     public static void entityAttributes(){
         FabricDefaultAttributeRegistry.register(ModEntities.BROWN_CRAB, BrownCrabEntity.setAttributes());
@@ -62,5 +66,6 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(ModEntities.CLAWSTER,ClawsterEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.LOBSTER,LobsterEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.PRAWN,PrawnEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.CRAYFISH,CrayfishEntity.setAttributes());
     }
 }

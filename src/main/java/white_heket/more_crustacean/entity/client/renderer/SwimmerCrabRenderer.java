@@ -1,5 +1,6 @@
 package white_heket.more_crustacean.entity.client.renderer;
 
+import net.minecraft.util.Formatting;
 import white_heket.more_crustacean.entity.client.model.SwimmerCrabModel;
 import white_heket.more_crustacean.entity.crustacean.crab.SwimmerCrabEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -16,7 +17,12 @@ public class SwimmerCrabRenderer extends GeoEntityRenderer<SwimmerCrabEntity> {
     }
     @Override
     public Identifier getTextureLocation(SwimmerCrabEntity swimmerCrabEntity){
-        return new Identifier(MoreCrustacean.MOD_ID,"textures/entity/swimmer_crab.png");
+        String string = Formatting.strip(swimmerCrabEntity.getName().getString());
+        if("Sailor.Krab".equals(string) || "孤泳者".equals(string)){
+            return new Identifier(MoreCrustacean.MOD_ID,"textures/entity/swimmer_crab_sailor.png");
+        }else {
+            return new Identifier(MoreCrustacean.MOD_ID, "textures/entity/swimmer_crab.png");
+        }
     }
     @Override
     public void render(SwimmerCrabEntity animatable, float entityYaw, float partialTick, MatrixStack poseStack, VertexConsumerProvider bufferSource, int packedLight) {

@@ -8,6 +8,16 @@
           "type": "minecraft:item",
           "name": "more_crustacean_whiteheket:hairy_crab",
           "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "more_crustacean_whiteheket:crayfish",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "more_crustacean_whiteheket:clam",
+          "weight": 1
         }
       ],
       "rolls": 1.0

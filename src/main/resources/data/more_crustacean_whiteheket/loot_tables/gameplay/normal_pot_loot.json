@@ -8,7 +8,7 @@
           "type": "minecraft:loot_table",
           "name": "minecraft:gameplay/fishing/junk",
           "quality": -2,
-          "weight": 30
+          "weight": 10
         },
         {
           "type": "minecraft:loot_table",

@@ -31,5 +31,6 @@ public class ModPotion {
         FabricBrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, Ingredient.ofItems(ModItems.CRAB_SHELL), ModPotion.CRABS_TOUGHNESS_POTION);
         FabricBrewingRecipeRegistry.registerPotionRecipe(ModPotion.CRABS_TOUGHNESS_POTION, Ingredient.ofItems(Items.REDSTONE), ModPotion.LONG_CRABS_TOUGHNESS_POTION);
         FabricBrewingRecipeRegistry.registerPotionRecipe(ModPotion.CRABS_TOUGHNESS_POTION, Ingredient.ofItems(Items.GLOWSTONE_DUST), ModPotion.STRONG_CRABS_TOUGHNESS_POTION);
+        FabricBrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD,Ingredient.ofItems(ModItems.PEARL),Potions.LONG_WATER_BREATHING);
     }
 }
