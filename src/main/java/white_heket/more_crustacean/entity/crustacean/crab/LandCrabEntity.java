@@ -47,7 +47,7 @@ public class LandCrabEntity extends AbstractCrabEntity implements Angerable, Geo
 
     private int regenTime;
     public LandCrabEntity(EntityType<? extends AbstractCrabEntity> entityType, World world) {
-        super(entityType, world, false);
+        super(entityType, world, false,true);
         this.setStepHeight(1.0F);
         this.setPathfindingPenalty(PathNodeType.WATER,-1.0F);
 

@@ -42,7 +42,7 @@ public class ClawsterEntity extends AbstractCrabEntity implements GeoEntity, Ang
     private UUID angryAt;
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public ClawsterEntity(EntityType<? extends AbstractCrabEntity> entityType, World world) {
-        super(entityType, world, false);
+        super(entityType, world, false,false);
         this.setStepHeight(1.0F);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0F);
     }
@@ -84,7 +84,7 @@ public class ClawsterEntity extends AbstractCrabEntity implements GeoEntity, Ang
         this.setCrazy(nbt.getBoolean("IsCrazy"));
     }
     public static boolean canSpawn(EntityType<? extends WaterCreatureEntity> entity, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
-        int topY = world.getSeaLevel() - 1;
+        int topY = world.getSeaLevel() - 6;
         int bottomY = world.getSeaLevel() - 48;
         return pos.getY() >= bottomY && pos.getY() <= topY && world.getBlockState(pos.down()).isIn(MoreCrustaceanBlockTags.CRAB_SPAWN_BLOCKS) && (world.isWater(pos) || world.isAir(pos));
     }
@@ -184,7 +184,7 @@ public class ClawsterEntity extends AbstractCrabEntity implements GeoEntity, Ang
             this.clawster.setMovementSpeed((float) (this.clawster.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED)*2.0));
             List<LivingEntity> nearbyEntities = this.clawster.getWorld().getEntitiesByClass(LivingEntity.class, clawster.getBoundingBox().expand(8.0), entity -> true);
             for (LivingEntity entity : nearbyEntities) {
-                if (entity != clawster) {
+                if (!(entity instanceof ClawsterEntity) || !(entity instanceof  PlayerEntity)) {
                     clawster.setTarget(entity);
                 }
             }

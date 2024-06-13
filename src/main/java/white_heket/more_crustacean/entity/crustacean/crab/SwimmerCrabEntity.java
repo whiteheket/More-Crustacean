@@ -1,5 +1,7 @@
 package white_heket.more_crustacean.entity.crustacean.crab;
 
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import white_heket.more_crustacean.item.ModItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -42,7 +44,7 @@ public class SwimmerCrabEntity extends AbstractCrabEntity implements Angerable, 
     protected final MobNavigation landNavigation;
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public SwimmerCrabEntity(EntityType<? extends AbstractCrabEntity> entityType, World world) {
-        super(entityType, world, false);
+        super(entityType, world, false,true);
         this.setStepHeight(1.0F);
         this.moveControl = new SwimmerCrabMoveControl(this);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0F);
@@ -63,14 +65,15 @@ public class SwimmerCrabEntity extends AbstractCrabEntity implements Angerable, 
     public void initGoals(){
         super.initGoals();
         this.goalSelector.add(0,new SwimmerCrabEscapeFromDangerGoal(this,this.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED)*1.5));
-        this.goalSelector.add(1,new MeleeAttackGoal(this,this.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED)*1.2,false));
+        this.goalSelector.add(1,new AttackGoal());
         this.goalSelector.add(1,new MoveIntoWaterGoal(this));
         this.goalSelector.add(3,new WanderAroundGoal(this,0.3));
         this.goalSelector.add(3,new LookAtEntityGoal(this, PlayerEntity.class,6.0F));
         this.goalSelector.add(3, new LookAroundGoal(this));
-        this.goalSelector.add(5,new SwimAroundGoal(this,1,1));
+        this.goalSelector.add(5,new SwimAroundGoal(this,0.7,1));
         this.targetSelector.add(2,new ActiveTargetGoal<>(this, DrownedEntity.class, true,(entity) -> entity.isBaby()));
-        this.targetSelector.add(1,new RevengeGoal(this, new Class[0]));
+        this.targetSelector.add(2,new ActiveTargetGoal<>(this, SlimeEntity.class, true));
+        this.targetSelector.add(1,new RevengeGoal(this, new Class[0]).setGroupRevenge(new Class[0]));
     }
     @Override
     public boolean shouldSwimInFluids(){
@@ -81,12 +84,22 @@ public class SwimmerCrabEntity extends AbstractCrabEntity implements Angerable, 
         return new ItemStack(ModItems.SWIMMER_CRAB_BUCKET);
     }
     public static boolean canSpawn(EntityType<? extends WaterCreatureEntity> entity, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
-        int topY = world.getSeaLevel() - 1;
-        int bottomY = world.getSeaLevel() - 48;
+        int topY = world.getSeaLevel() - 4;
+        int bottomY = world.getSeaLevel() - 40;
         return pos.getY() >= bottomY && pos.getY() <= topY && world.getBlockState(pos.down()).isIn(MoreCrustaceanBlockTags.CRAB_SPAWN_BLOCKS) && (world.isWater(pos) || world.isAir(pos));
     }
     @Override
     public void tickWaterBreathingAir(int air) {
+    }
+    @Override
+    public void tick(){
+        super.tick();
+        if(this.getName().getString().equals("孤泳者") || this.getName().getString().equals("Sailor.Krab")){
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,10,2,false,false),this);
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,100,0,false,false),this);
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,10,1,false,false),this);
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,10,0,false,false),this);
+        }
     }
     @Override
     public void chooseRandomAngerTime() {
@@ -213,6 +226,16 @@ public class SwimmerCrabEntity extends AbstractCrabEntity implements Angerable, 
                 }
                 super.tick();
             }
+        }
+    }
+    private class AttackGoal extends MeleeAttackGoal {
+        public AttackGoal() {
+            super(SwimmerCrabEntity.this, SwimmerCrabEntity.this.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED)*1.2, false);
+        }
+
+        protected double getSquaredMaxAttackDistance(LivingEntity entity) {
+            float f = SwimmerCrabEntity.this.getWidth() + 0.1F;
+            return (f * 2.0F * f * 2.0F + entity.getWidth());
         }
     }
 }

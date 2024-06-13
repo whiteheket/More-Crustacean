@@ -25,7 +25,7 @@ import white_heket.more_crustacean.tag.MoreCrustaceanBlockTags;
 public class LobsterEntity extends AbstractCrabEntity implements GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public LobsterEntity(EntityType<? extends AbstractCrabEntity> entityType, World world) {
-        super(entityType, world, false);
+        super(entityType, world, false,false);
         this.setStepHeight(1.0F);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0F);
     }
@@ -46,8 +46,8 @@ public class LobsterEntity extends AbstractCrabEntity implements GeoEntity {
         this.goalSelector.add(3, new LookAroundGoal(this));
     }
     public static boolean canSpawn(EntityType<? extends WaterCreatureEntity> entity, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
-        int topY = world.getSeaLevel() - 1;
-        int bottomY = world.getSeaLevel() - 48;
+        int topY = world.getSeaLevel() - 4;
+        int bottomY = world.getSeaLevel() - 40;
         return pos.getY() >= bottomY && pos.getY() <= topY && world.getBlockState(pos.down()).isIn(MoreCrustaceanBlockTags.CRAB_SPAWN_BLOCKS) && (world.isWater(pos) || world.isAir(pos));
     }
     @Override

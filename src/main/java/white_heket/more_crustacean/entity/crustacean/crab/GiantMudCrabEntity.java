@@ -41,7 +41,7 @@ public class GiantMudCrabEntity extends AbstractCrabEntity implements Angerable,
     protected final MobNavigation landNavigation;
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public GiantMudCrabEntity(EntityType<? extends AbstractCrabEntity> entityType, World world) {
-        super(entityType, world, true);
+        super(entityType, world, true,true);
         this.setStepHeight(1.0F);
         this.moveControl = new GiantMudCrabMoveControl(this);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0F);

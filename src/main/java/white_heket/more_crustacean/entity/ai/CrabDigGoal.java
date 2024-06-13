@@ -35,7 +35,7 @@ public class CrabDigGoal extends Goal {
         diggableBlock  = crab.getWorld().getBlockState(crab.getBlockPos().down());
         List<PlayerEntity> players = crab.getWorld().getEntitiesByType(EntityType.PLAYER, crab.getBoundingBox().expand(24),player -> true);
         boolean playerNearby = players.stream().anyMatch(player -> player.getPos().squaredDistanceTo(crab.getPos()) <= 576);
-        return crab.getDiggingCooldown() == 0 && random.nextDouble() <=chance &&  diggableBlock.isIn(MoreCrustaceanBlockTags.CRAB_DIGGABLE_BLOCKS) && crab.isCanDig() && playerNearby;
+        return crab.getDiggingCooldown() <= 0 && random.nextDouble() <=chance &&  diggableBlock.isIn(MoreCrustaceanBlockTags.CRAB_DIGGABLE_BLOCKS) && crab.isCanDig() && playerNearby;
     }
     @Override
     public void start() {
@@ -77,7 +77,7 @@ public class CrabDigGoal extends Goal {
     public boolean shouldContinue() {
         BlockState blockUnderCrab = crab.getWorld().getBlockState(crab.getBlockPos().down());
         return blockUnderCrab.isIn(MoreCrustaceanBlockTags.CRAB_DIGGABLE_BLOCKS) &&
-                crab.getDiggingCooldown() == 0 && diggingTimer < 100;
+                crab.getDiggingCooldown() <= 0 && diggingTimer < 100;
     }
 
     @Override

@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:milk"
+    },
+    {
+      "item": "more_crustacean_whiteheket:clam"
+    },
+    {
+      "item": "more_crustacean_whiteheket:clam"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "more_crustacean_whiteheket:clam_chowder",
+    "count": 2
+  },
+  "container": {
+    "item": "minecraft:bowl"
+  }
+}

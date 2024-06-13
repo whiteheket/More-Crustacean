@@ -1,4 +1,4 @@
-package white_heket.more_crustacean.block;
+package white_heket.more_crustacean.block.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;

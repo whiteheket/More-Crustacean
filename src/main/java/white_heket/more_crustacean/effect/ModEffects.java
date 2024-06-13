@@ -12,6 +12,7 @@ public class ModEffects {
     public static final StatusEffect LONG_HAND = registerStatusEffect("long_hand", new LongHand(StatusEffectCategory.BENEFICIAL,0x3c5184));
     public static final StatusEffect CRABS_TOUGHNESS = registerStatusEffect("crabs_toughness",new CrabsToughness(StatusEffectCategory.BENEFICIAL,0xa76c50));
     public static final StatusEffect XIAN = registerStatusEffect("xian",new Xian(StatusEffectCategory.BENEFICIAL,0x000000));
+    public static final StatusEffect NULL =registerStatusEffect("null",new Null(StatusEffectCategory.NEUTRAL,0x000000));
 
     private static StatusEffect registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(MoreCrustacean.MOD_ID, name), statusEffect);

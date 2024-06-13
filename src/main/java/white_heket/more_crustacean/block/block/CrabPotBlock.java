@@ -1,4 +1,4 @@
-package white_heket.more_crustacean.block;
+package white_heket.more_crustacean.block.block;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -25,13 +25,14 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
+import white_heket.more_crustacean.block.ModBlocks;
 import white_heket.more_crustacean.block.entity.CrabPotBlockEntity;
 
 
 public class CrabPotBlock extends BlockWithEntity implements Waterloggable {
     public static final DirectionProperty FACING;
     public static final BooleanProperty WATERLOGGED;
-    protected CrabPotBlock(Settings settings) {
+    public CrabPotBlock(Settings settings) {
         super(settings);
         this.setDefaultState(((((this.stateManager.getDefaultState()).with(FACING, Direction.NORTH))).with(WATERLOGGED, false)));
     }

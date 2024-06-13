@@ -1,5 +1,6 @@
 package white_heket.more_crustacean.event;
 
+import white_heket.more_crustacean.block.ModBlocks;
 import white_heket.more_crustacean.item.ModItems;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.item.ItemStack;
@@ -42,11 +43,16 @@ public class VillagerTrade{
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.EMERALD, 15), new ItemStack(ModItems.KING_CRAB_BUCKET, 1), 16, 15, 0.05f));
                     factories.add((entity, random) -> new TradeOffer(
-                            new ItemStack(Items.EMERALD, 15), new ItemStack(ModItems.GIANT_MUD_CRAB, 1), 16, 15, 0.05f));
+                            new ItemStack(Items.EMERALD, 15), new ItemStack(ModItems.GIANT_MUD_CRAB_BUCKET, 1), 16, 15, 0.05f));
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.EMERALD, 10), new ItemStack(ModItems.SAND_CRAB_BUCKET, 1), 16, 15, 0.05f));
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(Items.EMERALD, 5), new ItemStack(ModItems.CLAWSTER, 30),  new ItemStack(ModItems.COOKED_CLAWSTER, 30),16, 15, 0.05f));
+                });
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FISHERMAN, 4,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(ModItems.PEARL, 10), new ItemStack(ModBlocks.BUSHIGEMEN_BLOCK_ITEM, 1),1, 60, 0.05f));
                 });
     }
 }

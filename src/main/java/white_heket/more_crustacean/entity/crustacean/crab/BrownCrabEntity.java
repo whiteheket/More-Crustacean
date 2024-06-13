@@ -1,5 +1,6 @@
 package white_heket.more_crustacean.entity.crustacean.crab;
 
+import white_heket.more_crustacean.entity.ai.CrabDanceGoal;
 import white_heket.more_crustacean.entity.ai.CrabDigGoal;
 import white_heket.more_crustacean.item.ModItems;
 import net.minecraft.entity.EntityType;
@@ -39,7 +40,7 @@ public class BrownCrabEntity extends AbstractCrabEntity implements Angerable, Ge
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public BrownCrabEntity(EntityType<? extends AbstractCrabEntity> entityType, World world) {
-        super(entityType, world,true);
+        super(entityType, world,true,true);
         this.setStepHeight(1.0F);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0F);
     }
@@ -61,6 +62,7 @@ public class BrownCrabEntity extends AbstractCrabEntity implements Angerable, Ge
         this.goalSelector.add(0,new BrownCrabEscapeFromDangerGoal(this,this.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED)*2));
         this.goalSelector.add(3,new WanderAroundGoal(this,this.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED)));
         this.goalSelector.add(3,new LookAtEntityGoal(this, PlayerEntity.class,6.0F));
+        this.goalSelector.add(2,new CrabDanceGoal(this));
         this.goalSelector.add(3, new LookAroundGoal(this));
         this.goalSelector.add(2,new CrabDigGoal(this,0.60));
         this.targetSelector.add(1,new RevengeGoal(this, new Class[0]));
@@ -107,7 +109,7 @@ public class BrownCrabEntity extends AbstractCrabEntity implements Angerable, Ge
         return new ItemStack(ModItems.BROWN_CRAB_BUCKET);
     }
     public static boolean canSpawn(EntityType<? extends WaterCreatureEntity> entity, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
-        int topY = world.getSeaLevel() - 1;
+        int topY = world.getSeaLevel() - 6;
         int bottomY = world.getSeaLevel() - 48;
         return pos.getY() >= bottomY && pos.getY() <= topY && world.getBlockState(pos.down()).isIn(MoreCrustaceanBlockTags.CRAB_SPAWN_BLOCKS) && (world.isWater(pos) || world.isAir(pos));
     }
@@ -119,7 +121,10 @@ public class BrownCrabEntity extends AbstractCrabEntity implements Angerable, Ge
     protected <E extends BrownCrabEntity> PlayState predicate(final AnimationState<E> event) {
         if(this.isDigging() && this.isCanDig()){
             event.getController().setAnimation(RawAnimation.begin().then("brown_crab.model.dig", Animation.LoopType.PLAY_ONCE));
-        } else if(event.isMoving()){
+        }else if(this.isDancing()){
+            event.getController().setAnimation(RawAnimation.begin().then("brown_crab.model.dance", Animation.LoopType.LOOP));
+            event.getController().setAnimationSpeed(0.99D);
+        }else if(event.isMoving()){
             event.getController().setAnimation(RawAnimation.begin().then("brown_crab.model.walk", Animation.LoopType.LOOP));
             event.getController().setAnimationSpeed(3.0D);
         } else{

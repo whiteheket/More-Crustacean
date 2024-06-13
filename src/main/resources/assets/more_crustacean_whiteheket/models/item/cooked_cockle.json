@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "more_crustacean_whiteheket:item/cooked_cockle"
+  }
+}

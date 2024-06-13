@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "more_crustacean_whiteheket:brown_crab"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "item":"minecraft:bread"
+    },
+    {
+      "tag": "c:milk"
+    }
+  ],
+  "result": {
+    "item": "more_crustacean_whiteheket:crab_cake",
+    "count": 2
+  }
+}

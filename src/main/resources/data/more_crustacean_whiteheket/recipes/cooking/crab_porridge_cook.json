@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "item": "more_crustacean_whiteheket:giant_mud_crab"
+    },
+    {
+      "item": "more_crustacean_whiteheket:oyster"
+    },
+    {
+      "item": "more_crustacean_whiteheket:oyster"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "more_crustacean_whiteheket:water_crab_porridge"
+  },
+  "container": {
+    "item": "minecraft:bowl"
+  }
+}

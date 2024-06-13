@@ -1,8 +1,14 @@
 package white_heket.more_crustacean;
 
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import white_heket.more_crustacean.block.ModBlocks;
+import white_heket.more_crustacean.block.client.renderer.BushigemenBlockRenderer;
+import white_heket.more_crustacean.block.client.renderer.JewelleryChestBlockRenderer;
+import white_heket.more_crustacean.block.entity.BushigemenBlockEntity;
 import white_heket.more_crustacean.entity.ModEntities;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -24,5 +30,9 @@ public class MoreCrustaceanClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.PRAWN,PrawnRenderer::new);
         EntityRendererRegistry.register(ModEntities.CRAYFISH,CrayfishRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CRAB_POT_BLOCK, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BUSHIGEMEN_BLOCK, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.JEWELLERY_CHEST_BLOCK, RenderLayer.getCutoutMipped());
+        BlockEntityRendererFactories.register(ModBlocks.BUSHIGEMEN_BLOCK_ENTITY,BushigemenBlockRenderer::new);
+        BlockEntityRendererFactories.register(ModBlocks.JEWELLERY_CHEST_BLOCK_ENTITY, JewelleryChestBlockRenderer::new);
     }
 }

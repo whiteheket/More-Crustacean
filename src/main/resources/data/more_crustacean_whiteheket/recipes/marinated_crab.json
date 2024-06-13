@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "more_crustacean_whiteheket:swimmer_crab"
+    },
+    {
+      "item": "more_crustacean_whiteheket:swimmer_crab"
+    },
+    {
+      "item": "more_crustacean_whiteheket:swimmer_crab"
+    },
+    {
+      "item": "minecraft:potion"
+    },
+    {
+      "item": "minecraft:potion"
+    },
+    {
+      "item": "minecraft:potion"
+    },
+    {
+      "item": "minecraft:potion"
+    }
+  ],
+  "result": {
+    "item": "more_crustacean_whiteheket:marinated_crab",
+    "count": 3
+  }
+}

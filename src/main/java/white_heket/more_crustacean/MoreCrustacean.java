@@ -1,10 +1,13 @@
 package white_heket.more_crustacean;
 
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 import white_heket.more_crustacean.block.ModBlocks;
 import white_heket.more_crustacean.effect.ModEffects;
 import white_heket.more_crustacean.effect.ModPotion;
 import white_heket.more_crustacean.entity.ModEntities;
 import white_heket.more_crustacean.entity.ModEntitySpawn;
+import white_heket.more_crustacean.event.LootModifier;
 import white_heket.more_crustacean.event.VillagerTrade;
 import white_heket.more_crustacean.item.ComposterItems;
 import white_heket.more_crustacean.item.ModItems;
@@ -18,6 +21,8 @@ import white_heket.more_crustacean.world.ModFeatures;
 public class MoreCrustacean implements ModInitializer {
 	public static final String MOD_ID = "more_crustacean_whiteheket";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final Identifier BUSHIGEMEN_SOUND_ID = new Identifier("more_crustacean_whiteheket:bushigemen_sound");
+	public static SoundEvent BUSHIGEMEN_SOUND_EVENT = SoundEvent.of(BUSHIGEMEN_SOUND_ID);
 	@Override
 	public void onInitialize() {
 		LOGGER.info("螃蟹螃蟹龙虾龙虾");
@@ -31,5 +36,6 @@ public class MoreCrustacean implements ModInitializer {
 		ModBlocks.init();
 		ComposterItems.registerDefaultCompostableItems();
 		ModFeatures.init();
+		LootModifier.modifyLootTables();
 	}
 }

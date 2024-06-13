@@ -37,7 +37,7 @@ public class KingCrabEntity extends AbstractCrabEntity implements Angerable, Geo
     private UUID angryAt;
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public KingCrabEntity(EntityType<? extends AbstractCrabEntity> entityType, World world) {
-        super(entityType, world, true);
+        super(entityType, world, true,true);
         this.setStepHeight(1.25F);
         this.setPathfindingPenalty(PathNodeType.WATER, 0.0F);
     }
@@ -63,7 +63,7 @@ public class KingCrabEntity extends AbstractCrabEntity implements Angerable, Geo
         this.targetSelector.add(1,new RevengeGoal(this, new Class[0]));
     }
     public static boolean canSpawn(EntityType<? extends WaterCreatureEntity> entity, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
-        int topY = world.getSeaLevel() - 0;
+        int topY = world.getSeaLevel() - 10;
         int bottomY = world.getSeaLevel() - 60;
         return pos.getY() >= bottomY && pos.getY() <= topY && world.getBlockState(pos.down()).isIn(MoreCrustaceanBlockTags.CRAB_SPAWN_BLOCKS) && (world.isWater(pos) || world.isAir(pos));
     }

@@ -72,8 +72,16 @@ public class ModItems {
     public static final Item COOKED_LOBSTER = register("cooked_lobster",new Item((new Item.Settings()).food(ModFoodComponents.COOKED_LOBSTER)));
     public static final Item COOKED_PRAWN = register("cooked_prawn",new Item((new Item.Settings()).food(ModFoodComponents.COOKED_CRAB_MEAT)));
     public static final Item COOKED_CRAYFISH = register("cooked_crayfish",new Item((new Item.Settings()).food(ModFoodComponents.COOKED_CRAB_MEAT)));
+    public static final Item COOKED_CLAM = register("cooked_clam",new ShellFishItem((new Item.Settings()).food(ModFoodComponents.COOKED_CRAB_MEAT)));
+    public static final Item COOKED_COCKLE = register("cooked_cockle",new ShellFishItem((new Item.Settings()).food(ModFoodComponents.COOKED_CRAB_MEAT)));
     //菜谱
     public static final StewItem CLAM_CHOWDER = register("clam_chowder",new StewItem((new Item.Settings()).food(ModFoodComponents.CLAM_CHOWDER)));
+    public static final StewItem WATER_CRAB_PORRIDGE = register("water_crab_porridge",new StewItem((new Item.Settings()).food(ModFoodComponents.WATER_CRAB_PORRIDGE)));
+    public static final Item SPICY_CRAYFISH = register("spicy_crayfish",new Item((new Item.Settings()).food(ModFoodComponents.SPICY_CRAYFISH)));
+    public static final Item CRAB_CAKE = register("crab_cake",new StewItem((new Item.Settings()).food(ModFoodComponents.CRAB_CAKE)));
+    public static final Item CRAB_BUTTER_SOUP_DUMPLING = register("crab_butter_soup_dumpling",new Item((new Item.Settings()).food(ModFoodComponents.CRAB_BUTTER_SOUP_DUMPLING)));
+    public static final Item MARINATED_CRAB = register("marinated_crab",new Item((new Item.Settings()).food(ModFoodComponents.MARINATED_CRAB)));
+
 
     //桶装
     public static final BucketItem BROWN_CRAB_BUCKET = register("brown_crab_bucket", new EntityBucketItem(ModEntities.BROWN_CRAB, Fluids.WATER, SoundEvents.ITEM_BUCKET_EMPTY_FISH,(new Item.Settings()).maxCount(1)));
@@ -100,6 +108,8 @@ public class ModItems {
             Registry.register(Registries.ITEM, id, ITEMS.get(id));
             ItemGroupEvents.modifyEntriesEvent(MORE_CRUSTACEAN).register(content ->content.add(ModBlocks.CRAB_POT_BLOCK_ITEM));
             ItemGroupEvents.modifyEntriesEvent(MORE_CRUSTACEAN).register(content ->content.add(ModBlocks.OYSTER_BLOCK_ITEM));
+            ItemGroupEvents.modifyEntriesEvent(MORE_CRUSTACEAN).register(content ->content.add(ModBlocks.BUSHIGEMEN_BLOCK_ITEM));
+            ItemGroupEvents.modifyEntriesEvent(MORE_CRUSTACEAN).register(content ->content.add(ModBlocks.JEWELLERY_CHEST_BLOCK_ITEM));
             ItemGroupEvents.modifyEntriesEvent(MORE_CRUSTACEAN).register(entries -> entries.add(ITEMS.get(id)));
         }
     }
